@@ -1,7 +1,7 @@
 void setup()
 {
   background(0,0,0);
-  size(500);
+ size(500);
   //your code here
 }
 void draw()
@@ -24,6 +24,10 @@ int x,y;
   y=7;
     //class member variable initializations
   }
+  Boolean isMoving;
+  x= (int)(math.Random()*300);
+  y= (int)(math.Random()*300);
+  isMoving = true;
   void show()
   {
   ellipse(x,y,7,7);
@@ -31,20 +35,25 @@ int x,y;
   }
   void lookDown()
   {
-    //your code here
+    if (0<y<500){
+    isMoving==false;
+  }
+    fill(255);
+    ellipse(x,y,5,5);
   }
   void erase()
   {
-    //your code here
+   fill(0);
+   ellipse(x,y,7,7);//your code here
   }
   void move()
   {
-    //your code here
+    if  isMoving=true;{
+      y++;  
   }
   void wrap()
   {
     //your code here
   }
 }
-
 
