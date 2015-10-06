@@ -16,44 +16,53 @@ void mouseDragged()
 class Snowflake
 {
 int x,y;
-
+Boolean isMoving;
   //class member variable declarations
   Snowflake()
   {
-  x=7;
-  y=7;
-    //class member variable initializations
+  x= (int)(math.Random()*301);
+  y= (int)(math.Random()*301);
+ 
+    isMoving= true;
+    
   }
-  Boolean isMoving;
-  x= (int)(math.Random()*300);
-  y= (int)(math.Random()*300);
-  isMoving = true;
+  
+ 
   void show()
   {
-  ellipse(x,y,7,7);
-    //your code here
+    fill(255);
+    ellipse(x,y,5,5);    //your code here
   }
   void lookDown()
   {
-    if (0<y<500){
-    isMoving==false;
-  }
-    fill(255);
-    ellipse(x,y,5,5);
+    if (y<500 && y>0)
+    {
+      if(get(x,y+6) != color(0))
+      {
+       isMoving==false;
+      }
+    }
   }
   void erase()
   {
    fill(0);
-   ellipse(x,y,7,7);//your code here
+   ellipse(x,y,7,7);
   }
   void move()
   {
-    if  isMoving=true;{
+    if(isMoving=true){
       y++;  
+    }
+    else
+    {
+    }
   }
   void wrap()
   {
-    //your code here
+    if(y>=495)
+    {
+      y=0;
+      x=(int)(math.Random()*301);
+    }
   }
 }
-
